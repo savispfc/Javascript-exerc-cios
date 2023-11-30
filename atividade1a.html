@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividade 1a</title>
+  <style>
+    #resultado {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Atividade 1a</h1>
+
+  <script>
+    let nota1 = parseFloat(prompt("Digite a nota 1:"));
+    let nota2 = parseFloat(prompt("Digite a nota 2:"));
+
+    let media = (nota1 + nota2) / 2;
+
+    let situacao, cor;
+
+    if (media >= 6) {
+      situacao = "Aprovado";
+      cor = "blue";
+    } else {
+      situacao = "Reprovado";
+      cor = "red";
+    }
+
+    document.write(`Média: <span id="media" style="color: ${cor};">${media.toFixed(2)}</span><br>`);
+    document.write(`Situação: <span id="situacao" style="color: ${cor};">${situacao}</span>`);
+  </script>
+</body>
+</html>
