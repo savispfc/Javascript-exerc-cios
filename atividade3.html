@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>AppendChild Example</title>
+</head>
+<body>
+
+<h2>AppendChild Example</h2>
+
+<input type="text" id="myInput" placeholder="Item...">
+<button id="myBtn">Adicionar item</button>
+<div>
+    <input type="radio" id="cor1" name="cores" value="red">
+    <label for="cor1">Vermelho</label>
+    <input type="radio" id="cor2" name="cores" value="blue">
+    <label for="cor2">Azul</label>
+    <input type="radio" id="cor3" name="cores" value="green">
+    <label for="cor3">Verde</label>
+</div>
+<ul id="myList"></ul>
+
+<script>
+document.getElementById("myBtn").addEventListener("click", function() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInput").value;
+    var cor = document.querySelector('input[name="cores"]:checked').value;
+    var t = document.createTextNode(inputValue);
+
+    li.appendChild(t);
+    if (inputValue === '') {
+        alert("Você deve escrever algo!");
+    } else {
+        li.style.color = cor;
+        document.getElementById("myList").appendChild(li);
+    }
+    document.getElementById("myInput").value = "";
+
+    var radioButtons = document.getElementsByName("cores");
+    for (var i = 0; i < radioButtons.length; i++) {
+        radioButtons[i].checked = false;
+    }
+});
+</script>
+
+</body>
+</html>
